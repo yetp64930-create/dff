@@ -18,7 +18,7 @@ export function Header() {
     <>
       <div className="top">
         <div className="wrap">
-          <span>NEBOSH paper &amp; report support in Pakistan</span>
+          <span>NEBOSH IG1 Paper &amp; IG2 Report Support</span>
           <div className="topright">
             <a href={`tel:${site.phoneInternational}`}>☎ {site.phoneDisplay}</a>
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">

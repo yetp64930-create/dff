@@ -1,31 +1,63 @@
 export interface ServiceItem {
-  icon: string;
+  id: string;
   title: string;
+  subtitle: string;
+  tag: string;
+  image: string;
+  color: string;
+  lightBg: string;
   text: string;
-  link: string;
-  badge?: string;
+  linkText: string;
+  bullets: string[];
 }
 
 export const services: ServiceItem[] = [
   {
-    icon: '✎',
-    title: 'NEBOSH IG1 Paper Support',
-    text: 'Comprehensive guidance from experienced safety tutors on IG1 open-book examination questions, scenario analysis, and technical structuring.',
-    link: 'Ask about IG1',
-    badge: 'Popular',
+    id: 'ig1-exam-coaching',
+    title: 'IG1 Exam Coaching',
+    subtitle: 'Open-Book Examination Mentorship',
+    tag: 'IG1 SUPPORT',
+    image: '/images/service-ig1.jpg',
+    color: '#0284c7', // Sky Blue
+    lightBg: 'rgba(2, 132, 199, 0.08)',
+    text: 'Topic-wise guidance, key concepts, exam technique and answer structuring to tackle complex scenario questions.',
+    linkText: 'Learn More →',
+    bullets: [
+      'Structured Topic Guidance',
+      'Answer Writing Techniques',
+      'Mock Practice & Feedback',
+    ],
   },
   {
-    icon: '☏',
-    title: 'Closing Interview Preparation',
-    text: 'Mock interview practice and detailed coaching so you can confidently articulate and defend your exam submission before the assessor.',
-    link: 'Ask about interviews',
+    id: 'closing-interview',
+    title: 'Closing Interview Practice',
+    subtitle: 'Confidential 1-on-1 Coaching',
+    tag: 'INTERVIEW PREP',
+    image: '/images/service-interview.jpg',
+    color: '#f97316', // Vibrant Orange
+    lightBg: 'rgba(249, 115, 22, 0.08)',
+    text: 'One-to-one mock interviews with personalized feedback to help you confidently face your closing interview.',
+    linkText: 'Learn More →',
+    bullets: [
+      'Realistic Interview Practice',
+      'Common Questions & Answers',
+      'Detailed Feedback & Tips',
+    ],
   },
   {
-    icon: '▤',
-    title: 'IG2 Risk Assessment Report',
-    text: 'End-to-end guidance for your workplace risk assessment project, hazard identification, hierarchy of control measures, and report documentation.',
-    link: 'Ask about IG2',
-    badge: 'Comprehensive',
+    id: 'ig2-report-feedback',
+    title: 'IG2 Report Feedback',
+    subtitle: 'Workplace Risk Assessment Review',
+    tag: 'IG2 REPORT',
+    image: '/images/service-ig2.jpg',
+    color: '#10b981', // Emerald Green
+    lightBg: 'rgba(16, 185, 129, 0.08)',
+    text: 'Detailed review of your risk assessment report with practical improvements and guidance based on NEBOSH marking criteria.',
+    linkText: 'Learn More →',
+    bullets: [
+      'Report Structure Guidance',
+      'Risk Assessment Support',
+      'Detailed Review & Suggestions',
+    ],
   },
 ];
-

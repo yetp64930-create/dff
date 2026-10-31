@@ -1,29 +1,38 @@
 export interface ProcessStep {
   step: string;
+  stepNumber: string;
   title: string;
   description: string;
+  color: string;
 }
 
 export const processSteps: ProcessStep[] = [
   {
-    step: 'STEP 01',
-    title: 'Initial Consultation',
-    description: 'Reach out via WhatsApp or phone. Discuss your specific qualification unit, deadlines, and current preparation level.',
+    step: '01',
+    stepNumber: 'STEP 01',
+    title: 'Free Consultation',
+    description: 'Share your goals and requirements on WhatsApp to get expert initial guidance.',
+    color: '#06b6d4', // Cyan
   },
   {
-    step: 'STEP 02',
-    title: 'IG1 Paper Mentorship',
-    description: 'Our experienced safety tutors guide you through exam scenarios, command words, marking schemes, and standard formatting.',
+    step: '02',
+    stepNumber: 'STEP 02',
+    title: 'Choose Your Support',
+    description: 'Select IG1 coaching, IG2 report review, or interview preparation based on your need.',
+    color: '#3b82f6', // Blue
   },
   {
-    step: 'STEP 03',
-    title: 'Closing Interview Coaching',
-    description: 'Practice one-on-one mock interview sessions. Understand every part of your paper so you can comfortably explain your answers.',
+    step: '03',
+    stepNumber: 'STEP 03',
+    title: 'Personalized Mentoring',
+    description: 'Receive tailored 1-on-1 feedback, mock sessions, and actionable recommendations.',
+    color: '#f97316', // Orange
   },
   {
-    step: 'STEP 04',
-    title: 'IG2 Report Guidance',
-    description: 'Structured review and feedback on your workplace risk assessment drafts to ensure alignment with NEBOSH marking criteria.',
+    step: '04',
+    stepNumber: 'STEP 04',
+    title: 'Practice & Succeed',
+    description: 'Apply improvements, clear your assessments, and secure your NEBOSH qualification.',
+    color: '#8b5cf6', // Purple
   },
 ];
-

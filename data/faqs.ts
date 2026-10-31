@@ -1,28 +1,38 @@
 export interface FAQItem {
+  id: string;
   question: string;
   answer: string;
 }
 
 export const faqs: FAQItem[] = [
   {
-    question: 'What NEBOSH services does SafetyScript provide?',
-    answer: 'We provide mentoring and support for the NEBOSH International General Certificate (IGC), including IG1 open-book paper guidance, closing interview preparation, and IG2 practical risk assessment report support.',
+    id: 'faq-1',
+    question: 'What support do you provide for IG1?',
+    answer:
+      'We provide complete guidance for the NEBOSH IG1 open-book examination (OBE). Our trainers assist you in understanding the scenario, dissecting technical command words, structuring your answers effectively, and conducting mock paper reviews before submission.',
   },
   {
-    question: 'Who attends the NEBOSH closing interview?',
-    answer: 'The student must attend the closing interview personally as required by NEBOSH. We help you prepare thoroughly through 1-on-1 mock interviews and review sessions so you feel confident answering the assessor\'s questions.',
+    id: 'faq-2',
+    question: 'How does the IG2 report feedback work?',
+    answer:
+      'You share your draft workplace risk assessment report with us. Our senior safety mentors review it against official NEBOSH criteria, checking hazard identification, risk ratings, prioritization, and the hierarchy of control measures, providing detailed line-by-line feedback.',
   },
   {
-    question: 'How much does the consultation and support cost?',
-    answer: 'Pricing depends on the specific modules you require help with (IG1, IG2, or both) and your submission deadlines. Contact us on WhatsApp or phone to receive a quick, transparent quote.',
+    id: 'faq-3',
+    question: 'Do you provide help with the closing interview?',
+    answer:
+      'Yes! The student must attend the official closing interview personally. We provide 1-on-1 mock interviews via video call to test your understanding of your submitted paper, prepare you for unexpected assessor questions, and build your speaking confidence.',
   },
   {
-    question: 'How do we communicate and submit questions?',
-    answer: 'We conduct sessions via WhatsApp, voice calls, and online screen-share sessions for document reviews to ensure flexible scheduling around your job and studies.',
+    id: 'faq-4',
+    question: 'Is this support suitable for self-study students?',
+    answer:
+      'Absolutely. A large portion of our students are self-study learners who need structured clarity on difficult concepts, validation of their risk assessments, and targeted exam techniques without paying exorbitant institute fees.',
   },
   {
-    question: 'Is SafetyScript affiliated with NEBOSH?',
-    answer: 'No. SafetyScript is an independent academic coaching and mentorship service. We are not officially affiliated with or endorsed by NEBOSH (National Examination Board in Occupational Safety and Health).',
+    id: 'faq-5',
+    question: 'How can I book a free consultation?',
+    answer:
+      'Simply fill out the quick consultation form on our website or click any WhatsApp button to message us directly. Our safety advisor will discuss your qualification unit, exam timeline, and recommend the best support package for you.',
   },
 ];
-

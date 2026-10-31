@@ -21,7 +21,7 @@ export function Footer() {
             </a>
 
             <p className="footer-desc">
-              Independent NEBOSH study support for IG1, IG2 and closing interview preparation.
+              Independent NEBOSH study support for IG1 paper support, IG2 report support, and closing interview guidance.
               Learn. Apply. Succeed.
             </p>
 
@@ -98,18 +98,18 @@ export function Footer() {
             <h4>Our Services</h4>
             <ul className="footer-nav-list">
               <li>
-                <a href={whatsappLink('Hello, I am enquiring about IG1 Exam Coaching.')}>
-                  IG1 Coaching
+                <a href={whatsappLink('Hello, I am enquiring about IG1 Paper Support.')}>
+                  IG1 Paper Support
                 </a>
               </li>
               <li>
-                <a href={whatsappLink('Hello, I am enquiring about IG2 Report Feedback.')}>
-                  IG2 Report Feedback
+                <a href={whatsappLink('Hello, I am enquiring about IG2 Report Support.')}>
+                  IG2 Report Support
                 </a>
               </li>
               <li>
-                <a href={whatsappLink('Hello, I am enquiring about Closing Interview Practice.')}>
-                  Closing Interview
+                <a href={whatsappLink('Hello, I am enquiring about Closing Interview Guidance.')}>
+                  Closing Interview Guidance
                 </a>
               </li>
               <li>

@@ -26,7 +26,7 @@ import {
 export function Hero() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const [service, setService] = useState('IG1 Exam Coaching');
+  const [service, setService] = useState('IG1 Paper Support');
 
   function handleFormSubmit(e: FormEvent) {
     e.preventDefault();
@@ -69,7 +69,7 @@ export function Hero() {
             </div>
 
             <p className="subtitle">
-              Expert IG1 guidance, IG2 risk assessment feedback &amp; closing interview practice
+              Expert IG1 paper support, IG2 report support &amp; closing interview guidance
               tailored for learners in Pakistan and worldwide.
             </p>
 
@@ -184,9 +184,9 @@ export function Hero() {
                       value={service}
                       onChange={(e) => setService(e.target.value)}
                     >
-                      <option value="IG1 Exam Coaching">IG1 Exam Coaching</option>
-                      <option value="Closing Interview Practice">Closing Interview Practice</option>
-                      <option value="IG2 Report Feedback">IG2 Report Feedback</option>
+                      <option value="IG1 Paper Support">IG1 Paper Support (From PKR 15,000)</option>
+                      <option value="IG2 Report Support">IG2 Report Support (From PKR 10,000)</option>
+                      <option value="Closing Interview Guidance">Closing Interview Guidance (Free with Other Services)</option>
                       <option value="Complete NEBOSH Support">Complete NEBOSH Support</option>
                     </select>
                   </div>

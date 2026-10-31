@@ -63,7 +63,7 @@ export function Interactive() {
           <div className="chat-drawer-body">
             <div className="chat-welcome-bubble">
               Assalam-o-Alaikum! Welcome to SafetyScript. How can our safety mentors help you today?
-              (IG1 Coaching, IG2 Report Feedback, or Closing Interview)?
+              (IG1 Paper Support, IG2 Report Support, or Closing Interview Guidance)?
             </div>
 
             <form onSubmit={handleSend}>

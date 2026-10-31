@@ -7,21 +7,21 @@ export interface FAQItem {
 export const faqs: FAQItem[] = [
   {
     id: 'faq-1',
-    question: 'What support do you provide for IG1?',
+    question: 'What does IG1 Paper Support cover?',
     answer:
-      'We provide complete guidance for the NEBOSH IG1 open-book examination (OBE). Our trainers assist you in understanding the scenario, dissecting technical command words, structuring your answers effectively, and conducting mock paper reviews before submission.',
+      'We provide complete guidance for the NEBOSH IG1 open-book examination (OBE). Our trainers assist you in dissecting scenarios, technical command words, structuring high-scoring answers, and conducting mock paper reviews before submission. Closing Interview Guidance is also included free.',
   },
   {
     id: 'faq-2',
-    question: 'How does the IG2 report feedback work?',
+    question: 'How does the IG2 Report Support work?',
     answer:
-      'You share your draft workplace risk assessment report with us. Our senior safety mentors review it against official NEBOSH criteria, checking hazard identification, risk ratings, prioritization, and the hierarchy of control measures, providing detailed line-by-line feedback.',
+      'You share your draft workplace risk assessment report with us. Our senior safety mentors review it against official NEBOSH marking criteria, checking hazard identification, risk ratings, prioritization, and the hierarchy of control measures, providing detailed line-by-line feedback. Closing Interview Guidance is also included free.',
   },
   {
     id: 'faq-3',
-    question: 'Do you provide help with the closing interview?',
+    question: 'Is Closing Interview Guidance really free?',
     answer:
-      'Yes! The student must attend the official closing interview personally. We provide 1-on-1 mock interviews via video call to test your understanding of your submitted paper, prepare you for unexpected assessor questions, and build your speaking confidence.',
+      'Yes! Closing Interview Guidance is provided 100% free with our IG1 Paper Support or IG2 Report Support packages. We conduct 1-on-1 mock interviews via video call to test your comprehension of your submitted paper, prepare you for examiner questions, and build speaking confidence.',
   },
   {
     id: 'faq-4',

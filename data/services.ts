@@ -3,6 +3,9 @@ export interface ServiceItem {
   title: string;
   subtitle: string;
   tag: string;
+  pricePrefix: string;
+  price: string;
+  priceNote?: string;
   image: string;
   color: string;
   lightBg: string;
@@ -13,10 +16,12 @@ export interface ServiceItem {
 
 export const services: ServiceItem[] = [
   {
-    id: 'ig1-exam-coaching',
-    title: 'IG1 Exam Coaching',
+    id: 'ig1-paper-support',
+    title: 'IG1 Paper Support',
     subtitle: 'Open-Book Examination Mentorship',
     tag: 'IG1 SUPPORT',
+    pricePrefix: 'Starting From',
+    price: 'PKR 15,000',
     image: '/images/service-ig1.jpg',
     color: '#0284c7', // Sky Blue
     lightBg: 'rgba(2, 132, 199, 0.08)',
@@ -26,13 +31,17 @@ export const services: ServiceItem[] = [
       'Structured Topic Guidance',
       'Answer Writing Techniques',
       'Mock Practice & Feedback',
+      'Closing Interview Guidance Included',
     ],
   },
   {
     id: 'closing-interview',
-    title: 'Closing Interview Practice',
+    title: 'Closing Interview Guidance',
     subtitle: 'Confidential 1-on-1 Coaching',
     tag: 'INTERVIEW PREP',
+    pricePrefix: 'Pricing',
+    price: 'Free with Other Services',
+    priceNote: '100% Free with IG1 or IG2',
     image: '/images/service-interview.jpg',
     color: '#f97316', // Vibrant Orange
     lightBg: 'rgba(249, 115, 22, 0.08)',
@@ -42,13 +51,16 @@ export const services: ServiceItem[] = [
       'Realistic Interview Practice',
       'Common Questions & Answers',
       'Detailed Feedback & Tips',
+      'Free with IG1 or IG2 Support',
     ],
   },
   {
-    id: 'ig2-report-feedback',
-    title: 'IG2 Report Feedback',
+    id: 'ig2-report-support',
+    title: 'IG2 Report Support',
     subtitle: 'Workplace Risk Assessment Review',
     tag: 'IG2 REPORT',
+    pricePrefix: 'Starting From',
+    price: 'PKR 10,000',
     image: '/images/service-ig2.jpg',
     color: '#10b981', // Emerald Green
     lightBg: 'rgba(16, 185, 129, 0.08)',
@@ -58,6 +70,7 @@ export const services: ServiceItem[] = [
       'Report Structure Guidance',
       'Risk Assessment Support',
       'Detailed Review & Suggestions',
+      'Closing Interview Guidance Included',
     ],
   },
 ];

@@ -42,12 +42,19 @@ export function Services() {
                   className="service-icon-circle"
                   style={{ backgroundColor: item.color, color: '#ffffff' }}
                 >
-                  {item.id === 'ig1-exam-coaching' && <BookOpen size={24} />}
-                  {item.id === 'closing-interview' && <Users size={24} />}
-                  {item.id === 'ig2-report-feedback' && <FileText size={24} />}
+                  {item.id.includes('ig1') && <BookOpen size={24} />}
+                  {item.id.includes('closing') && <Users size={24} />}
+                  {item.id.includes('ig2') && <FileText size={24} />}
                 </div>
 
                 <h3>{item.title}</h3>
+
+                {/* Prominent Pricing Row */}
+                <div className="service-card-price">
+                  <span className="price-prefix">{item.pricePrefix}:</span>
+                  <span className="price-amount" style={{ color: item.color }}>{item.price}</span>
+                </div>
+
                 <p className="card-desc">{item.text}</p>
 
                 {/* Checklist */}

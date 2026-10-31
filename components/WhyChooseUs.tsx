@@ -4,7 +4,7 @@ const highlights = [
   'Experienced NEBOSH Trainers',
   'Cost-effective Student Pricing',
   'Comprehensive IG1 & IG2 Support',
-  'Rigorous Closing Interview Practice',
+  'Closing Interview Guidance (Free with other services)',
   'Clear & Prompt Communication',
   'Dedicated 1-on-1 Guidance Sessions',
 ];

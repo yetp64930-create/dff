@@ -18,7 +18,7 @@ export const processSteps: ProcessStep[] = [
     step: '02',
     stepNumber: 'STEP 02',
     title: 'Choose Your Support',
-    description: 'Select IG1 coaching, IG2 report review, or interview preparation based on your need.',
+    description: 'Select IG1 paper support, IG2 report support, or closing interview guidance based on your need.',
     color: '#3b82f6', // Blue
   },
   {

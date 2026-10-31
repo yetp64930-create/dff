@@ -1,7 +1,9 @@
 export interface PackageItem {
   id: string;
   name: string;
+  pricePrefix?: string;
   price: string;
+  priceNote?: string;
   period?: string;
   description: string;
   badge?: string;
@@ -13,46 +15,55 @@ export interface PackageItem {
 
 export const packages: PackageItem[] = [
   {
-    id: 'ig1-coaching',
-    name: 'IG1 Exam Coaching',
-    price: '$50',
-    description: 'Complete coaching for open-book scenario papers and technical structuring.',
+    id: 'ig1-paper-support',
+    name: 'IG1 Paper Support',
+    pricePrefix: 'Starting From',
+    price: 'PKR 15,000',
+    description: 'Complete guidance for open-book scenario papers, command words dissection, and structured answers.',
     color: '#0284c7', // Sky blue
     features: [
       'Topic-wise concept guidance',
-      'Mock practice & feedback',
+      'Scenario analysis & technique',
+      'Mock paper practice & feedback',
       'Answer writing techniques',
-      'Doubt clearing sessions on WhatsApp',
+      'Closing Interview Guidance included FREE',
+      'WhatsApp doubt clearing sessions',
     ],
     ctaText: 'Get Started →',
   },
   {
-    id: 'interview-practice',
-    name: 'Closing Interview Practice',
-    price: '$40',
-    description: 'One-to-one coaching and mock assessments to help you pass without anxiety.',
+    id: 'closing-interview-guidance',
+    name: 'Closing Interview Guidance',
+    pricePrefix: 'Special Offer',
+    price: 'FREE',
+    priceNote: 'Free with Other Services',
+    description: '1-on-1 mock interviews and personalized feedback to help you confidently face your assessor.',
     featured: true,
-    badge: 'Most Popular',
+    badge: 'Free with Other Services',
     color: '#f97316', // Orange
     features: [
       '1-to-1 realistic mock interviews',
       'Common assessor questions & answers',
       'Personalized review & feedback',
-      'Confidence building & body language tips',
+      'Body language & confidence tips',
+      '100% Free with IG1 or IG2 Support',
     ],
-    ctaText: 'Get Started →',
+    ctaText: 'Claim Free Guidance →',
   },
   {
-    id: 'ig2-feedback',
-    name: 'IG2 Report Feedback',
-    price: '$60',
-    description: 'Thorough review of your workplace risk assessment draft against NEBOSH criteria.',
+    id: 'ig2-report-support',
+    name: 'IG2 Report Support',
+    pricePrefix: 'Starting From',
+    price: 'PKR 10,000',
+    description: 'Thorough review of your workplace risk assessment draft against official NEBOSH marking criteria.',
     color: '#10b981', // Emerald
     features: [
       'Detailed report structure review',
       'Risk assessment methodology guidance',
+      'Hazard identification check',
       'Actionable improvement suggestions',
-      'Marking criteria & compliance alignment',
+      'Closing Interview Guidance included FREE',
+      'Marking criteria compliance alignment',
     ],
     ctaText: 'Get Started →',
   },

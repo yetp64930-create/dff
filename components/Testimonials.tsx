@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import { testimonials } from '@/data/testimonials';
-import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
 
 export function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [imgErrors, setImgErrors] = useState<Record<string, boolean>>({});
 
   function prevSlide() {
     setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
@@ -16,6 +17,7 @@ export function Testimonials() {
   }
 
   const current = testimonials[currentIndex];
+  const hasImgError = imgErrors[current.id];
 
   return (
     <section className="section-testimonials" id="reviews">
@@ -40,16 +42,51 @@ export function Testimonials() {
           </button>
 
           {/* Testimonial Card */}
-          <div className="testimonial-slide-card">
-            <img
-              src={current.avatar}
-              alt={current.name}
-              className="testimonial-avatar"
-              width={64}
-              height={64}
-            />
+          <div className="testimonial-slide-card" key={current.id}>
+            <div className="testimonial-avatar-container">
+              {!hasImgError ? (
+                <img
+                  src={current.avatar}
+                  alt={current.name}
+                  className="testimonial-avatar"
+                  width={72}
+                  height={72}
+                  onError={() =>
+                    setImgErrors((prev) => ({ ...prev, [current.id]: true }))
+                  }
+                />
+              ) : (
+                <div
+                  className="testimonial-avatar testimonial-avatar-initials"
+                  style={{ background: current.gradient }}
+                  aria-label={current.name}
+                >
+                  {current.initials}
+                </div>
+              )}
+              <div className="avatar-verified-pill" title="Verified NEBOSH Student">
+                <CheckCircle2 size={13} fill="#10b981" color="#ffffff" />
+              </div>
+            </div>
 
             <h3 className="testimonial-name">{current.name}</h3>
+
+            <div className="testimonial-role-loc">
+              <span>{current.role}</span>
+              <span className="meta-sep">•</span>
+              <span>{current.location}</span>
+            </div>
+
+            <span
+              className="testimonial-course-badge"
+              style={{
+                color: current.color,
+                borderColor: `${current.color}40`,
+                backgroundColor: `${current.color}14`,
+              }}
+            >
+              {current.course}
+            </span>
 
             {/* 5 Gold Stars */}
             <div className="testimonial-stars" aria-label="5 out of 5 stars">

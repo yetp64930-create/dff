@@ -1206,22 +1206,84 @@ input, select, textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.testimonial-avatar {
-  width: 68px;
-  height: 68px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #ffffff;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+.testimonial-avatar-container {
+  position: relative;
+  width: 72px;
+  height: 72px;
   margin-bottom: 12px;
 }
 
+.testimonial-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 16px rgba(11, 28, 54, 0.12);
+  display: block;
+}
+
+.testimonial-avatar-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  user-select: none;
+}
+
+.avatar-verified-pill {
+  position: absolute;
+  bottom: 0;
+  right: -2px;
+  background: #ffffff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
 .testimonial-name {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 800;
   color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.testimonial-role-loc {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.testimonial-role-loc .meta-sep {
+  color: #cbd5e1;
+}
+
+.testimonial-course-badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border: 1px solid transparent;
+  margin-bottom: 2px;
 }
 
 .testimonial-stars {

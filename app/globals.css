@@ -414,6 +414,24 @@ input, select, textarea {
   pointer-events: none;
 }
 
+.particle-network-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-particle-network {
+  opacity: 0.85;
+}
+
+.cta-particle-network {
+  opacity: 0.65;
+}
+
 .hero-container {
   display: grid;
   grid-template-columns: 1.05fr 1.15fr;
@@ -683,8 +701,25 @@ input, select, textarea {
   border-right: 1px solid var(--border-light);
 }
 
+.metric-item {
+  transition: transform 0.25s ease;
+}
+
+.metric-item:hover {
+  transform: translateY(-2px);
+}
+
 .metric-item:last-child {
   border-right: none;
+}
+
+@keyframes floatingIcon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
 }
 
 .metric-icon-wrap {
@@ -697,6 +732,25 @@ input, select, textarea {
   justify-content: center;
   color: var(--emerald);
   flex-shrink: 0;
+  animation: floatingIcon 3.6s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.metric-item:nth-child(2) .metric-icon-wrap {
+  animation-delay: 0.9s;
+}
+
+.metric-item:nth-child(3) .metric-icon-wrap {
+  animation-delay: 1.8s;
+}
+
+.metric-item:nth-child(4) .metric-icon-wrap {
+  animation-delay: 2.7s;
+}
+
+.metric-item:hover .metric-icon-wrap {
+  transform: translateY(-4px) scale(1.08);
+  background: rgba(16, 185, 129, 0.18);
 }
 
 .metric-numbers strong {
@@ -734,7 +788,9 @@ input, select, textarea {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -742,8 +798,8 @@ input, select, textarea {
 
 .service-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(16, 185, 129, 0.4);
-  box-shadow: 0 22px 45px -12px rgba(11, 28, 54, 0.16);
+  border-color: rgba(16, 185, 129, 0.55);
+  box-shadow: 0 24px 50px -12px rgba(11, 28, 54, 0.18), 0 0 24px -2px rgba(16, 185, 129, 0.22);
 }
 
 .service-image-box {
@@ -757,11 +813,11 @@ input, select, textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .service-card:hover .service-image-box img {
-  transform: scale(1.08);
+  transform: scale(1.09);
 }
 
 .service-tag-badge {
@@ -962,13 +1018,82 @@ input, select, textarea {
   line-height: 1.55;
 }
 
-.step-connector-arrow {
+.step-connector-flow {
   position: absolute;
   right: -13px;
   top: 50%;
   transform: translateY(-50%);
-  color: #94a3b8;
+  display: flex;
+  align-items: center;
   z-index: 5;
+  pointer-events: none;
+}
+
+.connector-line-track {
+  width: 14px;
+  height: 2px;
+  background: rgba(148, 163, 184, 0.35);
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.connector-line-pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #06b6d4, #10b981);
+  animation: connectorBeam 2s ease-in-out infinite;
+}
+
+@keyframes connectorBeam {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+}
+
+.connector-arrow-head {
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  margin-left: 2px;
+  animation: pulseArrow 2s ease-in-out infinite;
+}
+
+@keyframes pulseArrow {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateX(3px);
+    opacity: 1;
+    filter: drop-shadow(0 0 5px rgba(16, 185, 129, 0.7));
+  }
+}
+
+/* Scroll reveal for steps */
+.section-how .timeline-step-wrapper {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-how.is-revealed .timeline-step-wrapper {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ==========================================================================
@@ -1497,15 +1622,23 @@ input, select, textarea {
 
 .cta-helmet-visual {
   position: relative;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-helmet-visual:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.55);
 }
 
 .cta-helmet-img {
   width: 100%;
   height: 100%;
-  max-width: 260px;
+  max-width: 280px;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   display: block;
 }
@@ -1515,7 +1648,7 @@ input, select, textarea {
   bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(11, 28, 54, 0.85);
+  background: rgba(11, 28, 54, 0.9);
   backdrop-filter: blur(8px);
   color: #ffffff;
   font-size: 11px;
@@ -1523,6 +1656,9 @@ input, select, textarea {
   letter-spacing: 1.2px;
   padding: 4px 14px;
   border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
 }
 
 .cta-banner-content h2 {
@@ -1928,7 +2064,8 @@ input, select, textarea {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .step-connector-arrow {
+  .step-connector-arrow,
+  .step-connector-flow {
     display: none;
   }
   
@@ -2003,5 +2140,26 @@ input, select, textarea {
   .footer-bottom-bar {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion Accessibility & Smooth Transitions
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .particle-network-canvas {
+    display: none !important;
+  }
+  .section-how .timeline-step-wrapper {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from 'react';
 import { site, whatsappLink } from '@/lib/site';
 import { metrics } from '@/data/metrics';
+import { ParticleNetwork } from './ParticleNetwork';
 import {
   ShieldCheck,
   UserCheck,
@@ -41,6 +42,9 @@ export function Hero() {
         <div className="hero-glow-1" aria-hidden="true" />
         <div className="hero-glow-2" aria-hidden="true" />
         <div className="hero-ambient-grid" aria-hidden="true" />
+
+        {/* Dynamic Cyan & Emerald Particle Network */}
+        <ParticleNetwork className="hero-particle-network" particleCount={36} maxDistance={120} />
 
         <div className="wrap hero-container">
           {/* Left Column: Heading, Value Props & CTAs */}

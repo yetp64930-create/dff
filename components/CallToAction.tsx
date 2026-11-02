@@ -1,23 +1,26 @@
 import { whatsappLink } from '@/lib/site';
 import { MessageCircle, Play, CheckCircle2, ArrowRight, Target, Briefcase, Rocket } from 'lucide-react';
+import { ParticleNetwork } from './ParticleNetwork';
 
 export function CallToAction() {
   return (
     <section className="section-cta-banner" id="contact">
       <div className="wrap">
         <div className="cta-banner-box">
-          {/* Safety Helmet Visual Left */}
+          {/* Subtle Dynamic Particle Network */}
+          <ParticleNetwork className="cta-particle-network" particleCount={24} maxDistance={100} />
+          {/* Professional HSE Safety Officer Visual Left */}
           <div className="cta-helmet-wrapper">
             <div className="cta-helmet-visual">
               <img
-                src="/images/cta-helmet.jpg"
-                alt="NEBOSH Safety Helmet"
+                src="/images/cta-safety-officer.jpg"
+                alt="Professional NEBOSH Qualified HSE Safety Officer Conducting Workplace Inspection"
                 className="cta-helmet-img"
                 loading="lazy"
-                width={280}
-                height={220}
+                width={320}
+                height={215}
               />
-              <div className="helmet-label-tag">NEBOSH</div>
+              <div className="helmet-label-tag">NEBOSH HSE</div>
             </div>
           </div>
 

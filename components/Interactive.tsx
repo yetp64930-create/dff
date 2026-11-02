@@ -18,29 +18,18 @@ export function Interactive() {
 
   return (
     <>
-      {/* Floating Action Buttons Bottom-Right */}
+      {/* Single Consolidated Floating WhatsApp Button (No Duplicates) */}
       <div className="floating-action-group">
         <button
-          className="float-chat-btn"
+          className="float-wa-btn"
           onClick={() => setChatOpen(!chatOpen)}
           aria-expanded={chatOpen}
-          aria-label="Toggle Live WhatsApp Chat"
-        >
-          {chatOpen ? <X size={17} /> : <MessageSquare size={16} />}
-          <span>{chatOpen ? 'Close Chat' : 'Live Chat'}</span>
-        </button>
-
-        <a
-          href={whatsappLink('Hello SafetyScript, I want to connect with a mentor on WhatsApp.')}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="float-wa-btn"
-          aria-label="Contact us on WhatsApp"
+          aria-label={chatOpen ? 'Close WhatsApp Advisory Chat' : 'Chat with NEBOSH Advisor on WhatsApp'}
         >
           <span className="wa-beacon-ping" />
-          <MessageCircle size={19} fill="currentColor" />
-          <span>WhatsApp Us</span>
-        </a>
+          {chatOpen ? <X size={20} /> : <MessageCircle size={21} fill="currentColor" />}
+          <span>{chatOpen ? 'Close' : 'WhatsApp Us'}</span>
+        </button>
       </div>
 
       {/* Chat Drawer Modal Popup */}

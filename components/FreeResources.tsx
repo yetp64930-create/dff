@@ -70,14 +70,14 @@ export function FreeResources() {
                 </div>
 
                 <a
-                  href={whatsappLink(`Hello SafetyScript, I would like to get the free resource: "${item.title}". Please share the copy!`)}
+                  href={whatsappLink(`Hello SafetyScript, I would like to request the free PDF: "${item.title}". Please send it to me on WhatsApp!`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="resource-btn"
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}
                 >
-                  {item.id === 'ig1-samples' ? <Download size={14} /> : <ArrowUpRight size={14} />}
-                  <span>{item.actionText}</span>
+                  <FileText size={14} />
+                  <span>Request Free PDF</span>
                 </a>
               </div>
             );

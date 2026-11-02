@@ -4,5 +4,10 @@ import { siteUrl } from '@/lib/site';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [{ url: siteUrl, changeFrequency: 'monthly', priority: 1 }];
+  return [
+    { url: siteUrl, changeFrequency: 'monthly', priority: 1 },
+    { url: `${siteUrl}/privacy-policy`, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${siteUrl}/terms-of-service`, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${siteUrl}/disclaimer`, changeFrequency: 'yearly', priority: 0.3 },
+  ];
 }

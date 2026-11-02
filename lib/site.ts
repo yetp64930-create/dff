@@ -8,7 +8,7 @@ export const site = {
   phoneInternational: '+923278090456',
   whatsappNumber: '923278090456',
   email: 'support@safetyscript.pk',
-  hours: 'Mon - Sat (9:00 AM – 9:00 PM PKT)',
+  hours: '24/7 WhatsApp Support',
   whatsappMessage: 'Hello SafetyScript, I would like more information on NEBOSH guidance.',
 };
 

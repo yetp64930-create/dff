@@ -1,11 +1,34 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
 import { processSteps } from '@/data/process';
 import { MessageSquare, CheckSquare, UserCheck, Trophy, ArrowRight } from 'lucide-react';
 
 export function Process() {
   const icons = [MessageSquare, CheckSquare, UserCheck, Trophy];
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="section-how" id="how">
+    <section className={`section-how ${isVisible ? 'is-revealed' : ''}`} id="how" ref={sectionRef}>
       <div className="wrap">
         <div className="section-head">
           <div className="badge-pill badge-emerald">
@@ -27,7 +50,11 @@ export function Process() {
             {processSteps.map((step, index) => {
               const Icon = icons[index];
               return (
-                <div className="timeline-step-wrapper" key={step.stepNumber}>
+                <div
+                  className="timeline-step-wrapper"
+                  key={step.stepNumber}
+                  style={{ animationDelay: `${index * 140}ms` }}
+                >
                   <div className="timeline-step-card">
                     {/* Step Number Circle */}
                     <div
@@ -51,10 +78,15 @@ export function Process() {
                     <p>{step.description}</p>
                   </div>
 
-                  {/* Flow Arrow (Visible on desktop between steps) */}
+                  {/* Animated Flow Connector (Visible between steps on desktop) */}
                   {index < processSteps.length - 1 && (
-                    <div className="step-connector-arrow" aria-hidden="true">
-                      <ArrowRight size={20} />
+                    <div className="step-connector-flow" aria-hidden="true">
+                      <div className="connector-line-track">
+                        <div className="connector-line-pulse" />
+                      </div>
+                      <div className="connector-arrow-head">
+                        <ArrowRight size={18} />
+                      </div>
                     </div>
                   )}
                 </div>

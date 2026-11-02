@@ -16,7 +16,7 @@ export const freeResources: ResourceItem[] = [
     description: 'Practice real exam scenarios with structured model answers and breakdown of command words.',
     type: 'PDF Document',
     color: '#ef4444', // Red
-    actionText: 'Download PDF',
+    actionText: 'Request Free PDF',
     badge: 'Popular',
     fileHint: 'PDF • 2.4 MB',
   },
@@ -26,7 +26,7 @@ export const freeResources: ResourceItem[] = [
     description: 'Understand exactly what examiners look for when questions ask to identify, explain, or outline.',
     type: 'Study Guide',
     color: '#3b82f6', // Blue
-    actionText: 'View Guide',
+    actionText: 'Request Free PDF',
     badge: 'Essential',
     fileHint: 'Guide • 8 Pages',
   },
@@ -36,7 +36,7 @@ export const freeResources: ResourceItem[] = [
     description: 'Comprehensive pre-submission checklist to review your risk assessment report before final submission.',
     type: 'Checklist',
     color: '#10b981', // Emerald
-    actionText: 'Open Checklist',
+    actionText: 'Request Free PDF',
     badge: 'Recommended',
     fileHint: 'Checklist • 15 Points',
   },
@@ -46,7 +46,7 @@ export const freeResources: ResourceItem[] = [
     description: 'Key questions, common pitfalls, and expert strategies to confidently clear your closing interview.',
     type: 'Interview Prep',
     color: '#f59e0b', // Amber/Yellow
-    actionText: 'View Tips',
+    actionText: 'Request Free PDF',
     badge: 'Must Read',
     fileHint: 'Tips • 12 Questions',
   },

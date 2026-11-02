@@ -139,9 +139,12 @@ export function Footer() {
                 </div>
               </li>
               <li className="footer-contact-item">
-                <Clock size={16} className="contact-icon" />
+                <Clock size={16} className="contact-icon text-emerald" />
                 <div>
-                  <span>{site.hours}</span>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontWeight: 700 }}>
+                    <span className="pulse-dot" style={{ width: 7, height: 7 }} />
+                    {site.hours}
+                  </span>
                 </div>
               </li>
             </ul>
@@ -154,11 +157,11 @@ export function Footer() {
             &copy; {currentYear} {site.name}. All rights reserved.
           </div>
           <div className="footer-legal-links">
-            <a href="#">Privacy Policy</a>
+            <a href="/privacy-policy">Privacy Policy</a>
             <span className="footer-divider">|</span>
-            <a href="#">Terms of Service</a>
+            <a href="/terms-of-service">Terms of Service</a>
             <span className="footer-divider">|</span>
-            <a href="#">Disclaimer</a>
+            <a href="/disclaimer">Disclaimer</a>
           </div>
         </div>
       </div>

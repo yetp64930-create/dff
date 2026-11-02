@@ -809,6 +809,25 @@ input, select, textarea {
   position: relative;
 }
 
+.service-image-box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 28, 54, 0.48) 0%,
+    rgba(11, 28, 54, 0.1) 42%,
+    rgba(11, 28, 54, 0.38) 100%
+  );
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 1;
+}
+
+.service-card:hover .service-image-box::after {
+  opacity: 0.82;
+}
+
 .service-image-box img {
   width: 100%;
   height: 100%;
@@ -824,14 +843,17 @@ input, select, textarea {
   position: absolute;
   top: 14px;
   left: 14px;
-  padding: 5px 12px;
+  padding: 5px 13px;
   border-radius: var(--radius-full);
-  background: rgba(11, 28, 54, 0.8);
+  background: rgba(11, 28, 54, 0.85);
   backdrop-filter: blur(8px);
   color: #ffffff;
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.8px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 .service-card-body {
